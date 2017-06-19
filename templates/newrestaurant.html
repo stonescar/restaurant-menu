@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New restaurant</title>
+</head>
+<body>
+  <div class="site">
+    <div class="header">
+      <h1>New restaurant</h1>
+    </div>
+    <form method="POST" action="{{ url_for('newRestaurant') }}">
+      <label for="name">
+        Name:
+        <input type="text" placeholder="name" name="name">
+      </label>
+      <input type="submit" value="Add">
+      <input type="button" value="Cancel" onclick="window.location={{ url_for('showRestaurants') }}">
+    </form>
+
+
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add new menu item</title>
+</head>
+<body>
+  <div class="site">
+    <div class="header">
+      <h1>Add new menu item</h1>
+    </div>
+    <form method="POST" action="#">
+      <label for="name">
+        Name:<br>
+        <input type="text" name="name"><br>
+      </label>
+      <label for="price">
+        Price:<br>
+        <input type="text" name="price"><br>
+      </label>
+      <label for="course">
+        Course:<br>
+        <label><input type="radio" name="course" value="Appetizer">Appetizer</label>
+        <label><input type="radio" name="course" value="Entree">Entree</label>
+        <label><input type="radio" name="course" value="Dessert">Dessert</label>
+        <label><input type="radio" name="course" value="Beverage">Beverage</label>
+      </label><br>
+      <label for="description">
+        Description:<br>
+        <textarea name="description" cols="30" rows="6"></textarea><br>
+      </label>
+      <input type="submit" value="Add">
+      <input type="button" value="Cancel" onclick="window.location='{{ url_for('showMenu', restaurant_id=restaurant_id) }}'">
+    </form>
+
+  </div>
+  
+</body>
+</html>

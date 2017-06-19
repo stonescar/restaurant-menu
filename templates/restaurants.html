@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurants</title>
+</head>
+<body>
+  <div class="site">
+    <div class="header">
+      <h1>Restaurants</h1>
+    </div>
+    <a href="{{ url_for('newRestaurant') }}">+ New restaurant</a>
+
+    <ul class="restaurant_list">
+      
+      {% for r in restaurants %}
+      <li class="restaurant">
+        <a href="{{ url_for('showMenu', restaurant_id=r.id) }}">{{ r.name }}</a>
+        <div class="editdelete">
+          <a href="{{ url_for('editRestaurant', restaurant_id=r.id) }}">Edit</a>
+          <a href="{{ url_for('deleteRestaurant', restaurant_id=r.id) }}">Delete</a>
+        </div>
+      </li>
+      {% endfor %}      
+
+    </ul>
+
+
+  </div>
+  
+</body>
+</html>

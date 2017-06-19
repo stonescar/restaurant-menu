@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ restaurant.name }}</title>
+</head>
+<body>
+  <div class="site">
+    <div class="header">
+      <h1>{{ restaurant.name }}</h1>
+    </div>
+    <a href="{{ url_for('newMenuItem', restaurant_id=restaurant.id) }}">+ New menu item</a>
+
+    {% for courses in items %}
+      {% if courses[0] %}
+          
+    <h3>{{ courses[0].course+"s" }}</h3>
+      
+    <ul class="menu_item_list">
+
+      {% endif %}
+      
+      {% for i in courses %}
+      <li class="menu_item">
+        <span class="item_name">{{ i.name }}</span>
+        <span class="item_price">{{ i.price }}</span>
+        <p class="item_description">{{ i.description }}</p>
+        <div class="editdelete">
+          <a href="{{ url_for('editMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Edit</a>
+          <a href="{{ url_for('deleteMenuItem', restaurant_id=restaurant.id, menu_id=i.id) }}">Delete</a>
+        </div>
+      </li>
+      {% endfor %}      
+
+    </ul>
+    {% endfor %}
+
+    <div class="footer">
+      <a href="{{ url_for('showRestaurants') }}">Return to front page</a>
+    </div>
+
+  </div>
+
+  
+</body>
+</html>

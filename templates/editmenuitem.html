@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit {{ item.name }}</title>
+</head>
+<body>
+  <div class="site">
+    <div class="header">
+      <h1>Edit {{ item.name }}</h1>
+    </div>
+    <form method="POST">
+      <label for="name">
+        Name:<br> 
+        <input type="text" name="name" value="{{ item.name }}"><br>
+      </label>
+      <label for="price">
+        Price:<br>
+        <input type="text" name="price" value="{{ item.price }}"><br>
+      </label>
+      <label for="course">
+        Course:<br>
+        {% if item.course == 'Appetizer' %}
+        <label><input type="radio" name="course" value="Appetizer" checked>Appetizer</label>        
+        {% else %}
+        <label><input type="radio" name="course" value="Appetizer">Appetizer</label>
+        {% endif %}
+        {% if item.course == 'Entree' %}
+        <label><input type="radio" name="course" value="Entree" checked>Entree</label>
+        {% else %}
+        <label><input type="radio" name="course" value="Entree">Entree</label>
+        {% endif %}
+        {% if item.course == 'Dessert' %}
+        <label><input type="radio" name="course" value="Dessert" checked>Dessert</label>
+        {% else %}
+        <label><input type="radio" name="course" value="Dessert">Dessert</label>
+        {% endif %}
+        {% if item.course == 'Beverage' %}
+        <label><input type="radio" name="course" value="Beverage" checked>Beverage</label>
+        {% else %}
+        <label><input type="radio" name="course" value="Beverage">Beverage</label>
+        {% endif %}
+      </label><br>
+      <label for="description">
+        Description:<br>
+        <textarea name="description" cols="30" rows="6">{{ item.description }}</textarea><br>
+      </label>
+      <input type="submit" value="Edit">
+      <input type="button" value="Cancel" onclick="window.location='{{ url_for('showMenu', restaurant_id=item.restaurant.id) }}'">
+    </form>
+
+  </div>
+  
+</body>
+</html>
