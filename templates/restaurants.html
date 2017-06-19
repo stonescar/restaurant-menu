@@ -10,9 +10,18 @@
       <h1>Restaurants</h1>
     </div>
     <a href="{{ url_for('newRestaurant') }}">+ New restaurant</a>
+    
+    {% with messages=get_flashed_messages() %}
+      {% if messages %}
+      <ul class="flash">
+        {% for message in get_flashed_messages() %}
+          <li class="flash-message">{{ message }}</li>
+        {% endfor %}      
+      </ul>
+      {% endif %}
+    {% endwith %}
 
-    <ul class="restaurant_list">
-      
+    <ul class="restaurant_list">      
       {% for r in restaurants %}
       <li class="restaurant">
         <a href="{{ url_for('showMenu', restaurant_id=r.id) }}">{{ r.name }}</a>
