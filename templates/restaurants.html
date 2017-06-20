@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Restaurants</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Hammersmith+One|Meera+Inimai|Nunito" rel="stylesheet">
 </head>
 <body>
+  <header>
+      <img class="header-logo" src="{{ url_for('static', filename='img/logo.svg') }}" alt="Restaurant menus logo">
+  </header>
   <div class="site">
-    <div class="header">
-      <h1>Restaurants</h1>
-    </div>
-    <a href="{{ url_for('newRestaurant') }}">+ New restaurant</a>
     
+    <h1>Restaurants</h1>
     {% with messages=get_flashed_messages() %}
       {% if messages %}
       <ul class="flash">
@@ -24,7 +26,7 @@
     <ul class="restaurant_list">      
       {% for r in restaurants %}
       <li class="restaurant">
-        <a href="{{ url_for('showMenu', restaurant_id=r.id) }}">{{ r.name }}</a>
+        <a class="restaurant-name" href="{{ url_for('showMenu', restaurant_id=r.id) }}">{{ r.name }}</a>
         <div class="editdelete">
           <a href="{{ url_for('editRestaurant', restaurant_id=r.id) }}">Edit</a>
           <a href="{{ url_for('deleteRestaurant', restaurant_id=r.id) }}">Delete</a>
@@ -34,8 +36,12 @@
 
     </ul>
 
+    <a class="new-button" href="{{ url_for('newRestaurant') }}">
+      <span class="new-btn-tooltip">Add new restaurant</span>
+    </a>
 
   </div>
-  
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="{{ url_for('static', filename='js/func.js') }}"></script>
 </body>
 </html>

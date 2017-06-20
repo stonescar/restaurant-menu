@@ -1,0 +1,236 @@
+* {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+html, body {
+    background: #003641;
+    font-family: 'Meera Inimai', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Hammersmith One', sans-serif;
+}
+
+h1 {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto 0;
+    text-align: center;
+}
+
+.header-logo {
+    width: 100%;
+    max-width: 585px;
+}
+
+.site {
+    position: relative;
+    background: #ece8d6;
+    margin: 0 auto;
+    padding: 10px 10px 50px;
+    width: 100%;
+    max-width: 800px;
+    color: #003641;
+}
+
+.site a,
+.site a:visited {
+    color: #73b6c2;
+    text-decoration: none;
+}
+
+.site a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    border-top: 4px solid #73b6c2; 
+    padding-bottom: 10px;
+    background: #c9c2a0;
+}
+
+.footer a{
+    color: #003541!important;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.restaurant {
+    margin-bottom: 20px;
+}
+
+a.restaurant-name {
+    color: #003541!important;
+    font-size: 26px;
+}
+
+.editdelete {
+    font-size: 14px;
+    margin-top: -3px;
+}
+
+.new-button {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    bottom: 10px;
+    left: 10px;
+    -webkit-border-radius: 50%;
+            border-radius: 50%;
+    background: transparent url('/static/img/circle-with-plus.svg');
+}
+
+.new-button:hover {
+    box-shadow: 0 0 5px rgba(0,0,0,0.5)
+}
+
+.new-btn-tooltip {
+    background: #c9c2a0;
+    color: #ece8d6!important;
+    font-size: 14px;
+    line-height: 1.7;
+    padding: 2px;
+    width: 130px;
+    height: 26px;
+    position: absolute;
+    bottom: 6px;
+    left: 60px;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.new-btn-tooltip:before {
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: -26px;
+    bottom: 0;
+    border: 13px solid;
+    border-color: transparent #c9c2a0 transparent transparent;
+}
+
+.new-button:hover .new-btn-tooltip {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transition: visibility 0s, opacity 0.5s ease-in-out;
+       -moz-transition: visibility 0s, opacity 0.5s ease-in-out;
+        -ms-transition: visibility 0s, opacity 0.5s ease-in-out;
+         -o-transition: visibility 0s, opacity 0.5s ease-in-out;
+            transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
+.flash {
+    padding: 0;
+}
+
+.flash-message {
+    background: #6ca950 url('/static/img/check.svg') no-repeat 6px 4px;
+    color: #ece8d6;
+    padding: 5px 0 4px 40px;
+    font-family: 'Helvetica', sans-serif;
+    width: 100%;
+    max-width: 500px;
+    -webkit-border-radius: 3px;
+            border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+.flash-message:before {
+    content: 'x';
+    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    right: 10px;
+    top: -6px;
+    font-size: 26px;   
+}
+
+.menu_item_list {
+    padding: 0;
+}
+
+.menu_item {
+    background: rgba(115, 182, 194, 0.1);
+    border: 2px solid #73b6c2;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.item_name {
+    font-size: 20px;
+}
+
+.item_price {
+    font-size: 20px;
+    float: right;
+}
+
+.item_description {
+    margin-top: 0;
+    font-style: italic;
+}
+
+.menu_item > .editdelete {
+    text-align: right;
+    margin-top: -15px;
+}
+
+.menu_item > .editdelete > a {
+    background: #6CA950;
+    padding: 3px 16px;
+    color: #ece8d6;
+    font-size: 11px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+}
+
+.menu_item > .editdelete > a:hover {
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+            box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
+
+input[type=text],
+textarea {
+    background: rgba(115, 182, 194, 0.1);
+    border: 2px solid #73b6c2;
+    width: 100%;
+    max-width: 270px;
+}
+
+label[for=course] > label{
+    font-size: 12px;
+}
+
+input[type=submit],
+input[type=button] {
+    background: #6CA950;
+    padding: 1px 16px;
+    color: #ece8d6;
+    font-size: 10px;
+    -webkit-border-radius: 5px;
+            border-radius: 5px;
+    border: none;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,0.5);
+            box-shadow: 0 0 3px rgba(0,0,0,0.5);
+}
