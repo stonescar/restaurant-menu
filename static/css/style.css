@@ -222,10 +222,11 @@ input[type=button] {
     background: #6CA950;
     padding: 1px 16px;
     color: #ece8d6;
-    font-size: 10px;
+    font-size: 12px;
     -webkit-border-radius: 5px;
             border-radius: 5px;
     border: none;
+    margin-top: 2px;
 }
 
 input[type=submit]:hover,

@@ -16,8 +16,8 @@
     </div>
     <form method="POST" action="{{ url_for('newRestaurant') }}">
       <label for="name">
-        Name:
-        <input type="text" name="name">
+        Name:<br>
+        <input type="text" name="name"><br>
       </label>
       <input type="submit" value="Add">
       <input type="button" value="Cancel" onclick="window.location={{ url_for('showRestaurants') }}">
